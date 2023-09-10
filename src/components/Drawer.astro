@@ -10,22 +10,27 @@ const { links } = Astro.props;
 
 <div class="drawer-side">
   <label for="main-drawer" class="drawer-overlay"></label>
-  <ul class="menu bg-base-100 text-base-content min-h-full w-80 p-4">
-    <label for="main-drawer" class="btn btn-ghost">Close</label>
-    <!-- Categories -->
-    {
-      links.map((link) => (
-        <li>
-          <a href="">{link.name}</a>
-        </li>
-      ))
-    }
-    <!-- Other Links -->
-    <li><a href="">About</a></li>
-    <li><a href="">Github</a></li>
-    <li><a href="">Credits</a></li>
-    <li><a href="">Disclaimer</a></li>
-
-    <!-- Drawer Footer (?) -->
+  <ul class="menu min-h-full w-80 bg-base-100 p-4 text-base-content">
+    <li>
+      <h2 class="menu-title">Categories</h2>
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href="">{link.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </li>
+    <li>
+      <h2 class="menu-title">Other links</h2>
+      <ul>
+        <li><a href="">About</a></li>
+        <li><a href="">Github</a></li>
+        <li><a href="">Credits</a></li>
+        <li><a href="">Disclaimer</a></li>
+      </ul>
+    </li>
   </ul>
 </div>
