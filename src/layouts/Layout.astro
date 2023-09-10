@@ -1,5 +1,50 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Drawer from "../components/Drawer.astro";
 
+export interface Link {
+  name: string;
+  path: string;
+  borderColor: string;
+}
+
+const links: Link[] = [
+  {
+    name: "Icons",
+    path: "/",
+    borderColor: "hover:border-b-rose-500",
+  },
+  {
+    name: "Fonts",
+    path: "/",
+    borderColor: "hover:border-b-sky-500",
+  },
+  {
+    name: "Illustrations",
+    path: "/",
+    borderColor: "hover:border-b-green-500",
+  },
+  {
+    name: "Colors",
+    path: "/",
+    borderColor: "hover:border-b-indigo-500",
+  },
+  {
+    name: "Libraries",
+    path: "/",
+    borderColor: "hover:border-b-yellow-500",
+  },
+  {
+    name: "Generators",
+    path: "/",
+    borderColor: "hover:border-b-orange-500",
+  },
+  {
+    name: "Other",
+    path: "/",
+    borderColor: "hover:border-b-slate-500",
+  },
+];
 ---
 
 <!doctype html>
@@ -12,8 +57,14 @@
     <meta name="generator" content={Astro.generator} />
     <title>wdt</title>
   </head>
-  <body>
-    <nav></nav>
-    <slot />
+  <body class="text-content w-screen">
+    <div class="drawer drawer-end">
+      <input type="checkbox" id="main-drawer" class="drawer-toggle" />
+      <div class="drawer-content">
+        <Navbar links={links} />
+        <slot />
+      </div>
+      <Drawer links={links} />
+    </div>
   </body>
 </html>

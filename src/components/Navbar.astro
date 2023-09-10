@@ -1,0 +1,55 @@
+---
+import type { Link } from "../layouts/Layout.astro";
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<header class="border-b-[1px] border-b-zinc-800">
+  <nav class="navbar bg-base-100">
+    <div class="navbar-start">
+      <a
+        href="/"
+        class="btn btn-ghost font-mono text-2xl normal-case italic transition-colors hover:text-white"
+      >
+        {"<web-dev-tools/>"}
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:block">
+      <ul class="menu menu-horizontal">
+        {
+          links.slice(0, 5).map((link) => (
+            <li
+              class={`group border-b-2 border-b-transparent transition-all ${link.borderColor}`}
+            >
+              <a
+                href={link.path}
+                class="transition-colors hover:bg-transparent group-hover:text-white"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="navbar-end">
+      <label for="main-drawer" class="btn btn-square btn-ghost group">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-7 w-7 stroke-current transition-colors group-hover:stroke-white"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path></svg
+        >
+      </label>
+    </div>
+  </nav>
+</header>
