@@ -17,7 +17,7 @@ const { links } = Astro.props;
         {
           links.map((link) => (
             <li>
-              <a href="">{link.name}</a>
+              <a href={link.path}>{link.name}</a>
             </li>
           ))
         }
@@ -26,7 +26,7 @@ const { links } = Astro.props;
     <li>
       <h2 class="menu-title">Other links</h2>
       <ul>
-        <li><a href="">About</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="">Github</a></li>
         <li><a href="">Credits</a></li>
         <li><a href="">Disclaimer</a></li>

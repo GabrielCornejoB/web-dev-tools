@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { category: "icons" } },
+    { params: { category: "fonts" } },
+    { params: { category: "illustrations" } },
+    { params: { category: "colors" } },
+    { params: { category: "libraries" } },
+    { params: { category: "generators" } },
+    { params: { category: "other" } },
+  ];
+}
+
+const { category } = Astro.params;
+---
+
+<Layout>
+  <h1>Hello {category}</h1>
+</Layout>
