@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { links } = Astro.props;
+const pathName = new URL(Astro.request.url).pathname;
 ---
 
 <header class="border-b-[1px] border-b-zinc-800">
@@ -23,7 +24,11 @@ const { links } = Astro.props;
         {
           links.slice(0, 5).map((link) => (
             <li
-              class={`group border-y-2 border-y-transparent bg-none transition-all  ${link.borderColor}`}
+              class:list={[
+                "group border-y-2 border-y-transparent bg-none transition-all",
+                link.hoverBorderColor,
+                `${pathName === link.path ? link.borderColor : ""}`,
+              ]}
             >
               <a
                 href={link.path}
