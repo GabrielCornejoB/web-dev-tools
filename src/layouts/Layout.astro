@@ -1,13 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Drawer from "../components/Drawer.astro";
-
-export interface Link {
-  name: string;
-  path: string;
-  borderColor: string;
-  hoverBorderColor: string;
-}
+import type { Link } from "../models/link.model";
 
 const links: Link[] = [
   {
@@ -70,7 +64,9 @@ const links: Link[] = [
       <input type="checkbox" id="main-drawer" class="drawer-toggle" />
       <div class="drawer-content">
         <Navbar links={links} />
-        <slot />
+        <main class="w-screen">
+          <slot />
+        </main>
       </div>
       <Drawer links={links} />
     </div>

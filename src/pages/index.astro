@@ -1,7 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout>
-  <h1 class="">Hello world</h1>
+  <div class="mt-8 flex w-full flex-col items-center gap-8">
+    <h1 class="">Hello world</h1>
+    <div class="auto-rows-custom grid-cols-custom grid">
+      <Card
+        tool={{
+          name: "Ionicons",
+          author: "Ionic",
+          category: "icons",
+          description: "Open source icons. Lovingly hand-crafted.",
+          url: "https://ionic.io/ionicons",
+          imageURL:
+            "https://firebasestorage.googleapis.com/v0/b/web-dev-tools-47601.appspot.com/o/ionicons-tiny.webp?alt=media&token=0ba4880d-afba-413d-8e64-45d590cb37c0",
+          tags: ["SVG", "IONIC", "SVG", "IONIC", "SVG"],
+        }}
+      />
+    </div>
+  </div>
 </Layout>

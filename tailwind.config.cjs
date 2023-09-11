@@ -2,7 +2,19 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        custom: "repeat(auto-fill, 300px)",
+      },
+      gridAutoRows: {
+        custom: "10px",
+      },
+      gridRowEnd: {
+        sm: "span 20",
+        md: "span 22",
+        lg: "span 24",
+      },
+    },
   },
   daisyui: {
     themes: [
