@@ -4,15 +4,21 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        custom: "repeat(auto-fill, 300px)",
+        custom: "repeat(auto-fill, 288px)",
       },
       gridAutoRows: {
         custom: "10px",
       },
       gridRowEnd: {
-        sm: "span 20",
-        md: "span 22",
-        lg: "span 24",
+        sm: "span 17",
+        md: "span 19",
+        lg: "span 21",
+      },
+      width: {
+        card: "300px",
+      },
+      fontFamily: {
+        sans: ["Fira Sans", "sans-serif"],
       },
     },
   },
