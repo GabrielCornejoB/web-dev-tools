@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        custom: "repeat(auto-fill, 288px)",
+        custom: "repeat(2, 150px)",
+        md: "repeat(4, 150px)",
+        lg: "repeat(5, 150px)",
+        xl: "repeat(6, 150px)",
       },
       gridAutoRows: {
         custom: "10px",

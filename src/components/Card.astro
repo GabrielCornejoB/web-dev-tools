@@ -32,8 +32,10 @@ const color = getColorFromCategory();
 
 <div
   class:list={[
-    "h-card hover:w-longerCard group text-white transition-all [perspective:1000px]",
-    name.length < 9 ? "w-card" : "w-longerCard",
+    "h-card group text-white transition-all duration-1000 [perspective:1000px]",
+    name.length < 9
+      ? "hover:w-longerCard w-card hover:col-span-2"
+      : "w-longerCard col-span-2",
   ]}
 >
   <div
@@ -53,15 +55,17 @@ const color = getColorFromCategory();
     </div>
     <div
       aria-label="Card Back"
-      class="absolute flex h-full w-full flex-col justify-between p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+      class="absolute flex h-full w-full flex-col justify-between overflow-hidden p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
     >
-      <p class="hyphens-auto">{description}</p>
-      <div class="flex flex-row gap-3">
+      <p class="max-h-24 overflow-hidden hyphens-auto">
+        {description}
+      </p>
+      <div class="flex flex-row justify-start gap-3">
         {
           tags.map((tag) => (
-            <span class="rounded-md bg-base-100 bg-opacity-50 px-[6px] pb-px pt-[2px] text-sm">
+            <p class=" rounded-md bg-base-100 bg-opacity-50 px-[6px] pb-px pt-[2px] text-sm">
               {tag}
-            </span>
+            </p>
           ))
         }
       </div>
