@@ -15,7 +15,11 @@ module.exports = {
         lg: "span 21",
       },
       width: {
-        card: "300px",
+        card: "150px",
+        longerCard: "325px",
+      },
+      height: {
+        card: "150px",
       },
       fontFamily: {
         sans: ["Fira Sans", "sans-serif"],
