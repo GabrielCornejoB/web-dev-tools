@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { collection, query, getDocs, where } from "firebase/firestore";
+import { firestore } from "../firebase.config";
+import type { Tool } from "../models/tool.model";
+import Grid from "../components/Grid.astro";
 
 export function getStaticPaths() {
   return [
@@ -12,10 +16,24 @@ export function getStaticPaths() {
     { params: { category: "other" } },
   ];
 }
-
 const { category } = Astro.params;
+
+const tools: Tool[] = [];
+
+const q = query(
+  collection(firestore, "tools"),
+  where("category", "==", category),
+);
+const qs = await getDocs(q);
+qs.forEach((doc) => {
+  tools.push(doc.data() as Tool);
+});
 ---
 
-<Layout>
-  <h1>Hello {category}</h1>
+<Layout
+  title={category !== "other"
+    ? `Web Dev ${category?.charAt(0).toUpperCase()}${category?.slice(1)}`
+    : "Other Web Dev Tools"}
+>
+  <Grid tools={tools} />
 </Layout>
