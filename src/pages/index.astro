@@ -1,16 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { collection, getDocs } from "firebase/firestore";
-import { firestore } from "../firebase.config";
+import { firestore } from "../utils/firebase.config";
+import { sortTools } from "../utils/sortData";
 import type { Tool } from "../models/tool.model";
+import Layout from "../layouts/Layout.astro";
 import Grid from "../components/Grid.astro";
 
-const tools: Tool[] = [];
+const data: Tool[] = [];
 
 const qs = await getDocs(collection(firestore, "tools"));
 qs.forEach((doc) => {
-  tools.push(doc.data() as Tool);
+  data.push(doc.data() as Tool);
 });
+
+const tools = sortTools(data);
 ---
 
 <Layout title="Web Dev Tools">
