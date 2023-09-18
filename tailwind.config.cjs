@@ -18,11 +18,11 @@ module.exports = {
         lg: "span 21",
       },
       width: {
-        card: "150px",
-        longerCard: "325px",
+        card: "200px",
+        longerCard: "300px",
       },
       height: {
-        card: "150px",
+        card: "200px",
       },
       fontFamily: {
         sans: ["Fira Sans", "sans-serif"],

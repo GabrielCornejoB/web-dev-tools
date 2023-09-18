@@ -30,15 +30,18 @@ const getColorFromCategory = () => {
 const color = getColorFromCategory();
 ---
 
-<div
+<a
+  href={url}
   class:list={[
-    "group h-card text-white [perspective:1000px] [transition:width_0.5s_0.5s] hover:[transition:width_0.5s_0s]",
-    name.length < 9 ? "w-card hover:w-longerCard" : "w-longerCard",
+    "group h-card text-left text-white [perspective:1000px]",
+    description.length < 70 && name.length < 11 && tags.length < 4
+      ? "w-card "
+      : "w-longerCard",
   ]}
 >
   <div
     class:list={[
-      "myChild relative h-full w-full rounded-xl transition-transform duration-500 [transform-style:preserve-3d] group-hover:delay-500 group-hover:[transform:rotateY(-180deg)]",
+      "myChild relative h-full w-full rounded-xl transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(-180deg)]",
       color,
     ]}
   >
@@ -55,10 +58,10 @@ const color = getColorFromCategory();
       aria-label="Card Back"
       class="absolute flex h-full w-full flex-col justify-between overflow-hidden p-4 [backface-visibility:hidden] [transform:rotateY(180deg)]"
     >
-      <p class="max-h-24 overflow-hidden hyphens-auto">
+      <p class="flex-grow hyphens-auto">
         {description}
       </p>
-      <div class="flex flex-row justify-start gap-3">
+      <div class="flex flex-row flex-wrap justify-start gap-2">
         {
           tags.map((tag) => (
             <p class=" rounded-md bg-base-100 bg-opacity-50 px-[6px] pb-px pt-[2px] text-sm">
@@ -69,4 +72,4 @@ const color = getColorFromCategory();
       </div>
     </div>
   </div>
-</div>
+</a>

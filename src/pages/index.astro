@@ -13,6 +13,8 @@ import type { Tool } from "../models/tool.model";
 // });
 // console.log(tools.slice(0, 20));
 
+// https://codepen.io/Souleste/pen/JjGjKxw
+
 const tools: Tool[] = [
   {
     author: "bennett-feely",
@@ -120,7 +122,7 @@ const tools: Tool[] = [
   {
     author: "typicode",
     tags: ["API"],
-    name: "JSONPlaceholder",
+    name: "JSON Placeholder",
     description: "Free fake API for testing and prototyping.",
     category: "other",
     url: "https://jsonplaceholder.typicode.com/",
@@ -225,7 +227,7 @@ const tools: Tool[] = [
 <Layout>
   <div class="mt-8 flex w-full flex-col items-center gap-8">
     <div
-      class="mt-16 flex max-w-[1050px] flex-row flex-wrap justify-start gap-[25px]"
+      class="mb-[25px] flex w-[300px] flex-row flex-wrap justify-center gap-[25px] md:w-[625px] lg:w-[950px] 2xl:w-[1275px]"
     >
       {tools.map((tool) => <Card tool={tool} />)}
     </div>

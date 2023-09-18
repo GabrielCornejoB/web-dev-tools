@@ -66,12 +66,12 @@ const links: Link[] = [
       rel="stylesheet"
     />
   </head>
-  <body class="text-content w-screen">
+  <body class="text-content w-full">
     <div class="drawer drawer-end">
       <input type="checkbox" id="main-drawer" class="drawer-toggle" />
       <div class="drawer-content">
         <Navbar links={links} />
-        <main class="w-screen">
+        <main class="w-full">
           <slot />
         </main>
       </div>
