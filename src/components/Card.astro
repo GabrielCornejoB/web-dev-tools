@@ -32,15 +32,13 @@ const color = getColorFromCategory();
 
 <div
   class:list={[
-    "h-card group text-white transition-all duration-1000 [perspective:1000px]",
-    name.length < 9
-      ? "hover:w-longerCard w-card hover:col-span-2"
-      : "w-longerCard col-span-2",
+    "group h-card text-white [perspective:1000px] [transition:width_0.5s_0.5s] hover:[transition:width_0.5s_0s]",
+    name.length < 9 ? "w-card hover:w-longerCard" : "w-longerCard",
   ]}
 >
   <div
     class:list={[
-      "relative h-full w-full rounded-xl transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateY(-180deg)]",
+      "myChild relative h-full w-full rounded-xl transition-transform duration-500 [transform-style:preserve-3d] group-hover:delay-500 group-hover:[transform:rotateY(-180deg)]",
       color,
     ]}
   >
