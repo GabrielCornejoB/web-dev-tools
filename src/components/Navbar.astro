@@ -14,15 +14,15 @@ const pathName = new URL(Astro.request.url).pathname;
     <div class="navbar-start">
       <a
         href="/"
-        class="btn btn-ghost font-mono text-2xl normal-case italic transition-colors hover:text-white"
+        class="btn btn-ghost h-14 font-mono text-2xl normal-case italic transition-colors hover:text-white"
       >
-        {"<web-dev-tools/>"}
+        {"<wdt/>"}
       </a>
     </div>
     <div class="navbar-center hidden lg:block">
       <ul class="menu menu-horizontal">
         {
-          links.slice(0, 5).map((link) => (
+          links.map((link) => (
             <li
               class:list={[
                 "group border-y-2 border-y-transparent bg-none transition-all",
@@ -32,7 +32,7 @@ const pathName = new URL(Astro.request.url).pathname;
             >
               <a
                 href={link.path}
-                class="!bg-transparent transition-colors group-hover:text-white"
+                class="!bg-transparent px-6 transition-colors group-hover:text-white"
               >
                 {link.name}
               </a>
