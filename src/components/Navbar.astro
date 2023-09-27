@@ -14,7 +14,10 @@ const pathName = new URL(Astro.request.url).pathname;
     <div class="navbar-start">
       <a
         href="/"
-        class="btn btn-ghost h-14 font-mono text-2xl normal-case italic transition-colors hover:text-white"
+        class:list={[
+          "btn btn-ghost h-14 animate-none font-mono text-2xl normal-case italic transition-colors hover:text-white",
+          `${pathName === "/" ? "text-white" : ""}`,
+        ]}
       >
         {"<wdt/>"}
       </a>
