@@ -1,5 +1,6 @@
 ---
 import type { Link } from "../models/link.model";
+import MenuIcon from "./icons/MenuIcon.astro";
 
 interface Props {
   links: Link[];
@@ -9,55 +10,13 @@ const { links } = Astro.props;
 const pathName = new URL(Astro.request.url).pathname;
 ---
 
-<header class="border-b-[1px] border-b-zinc-800">
-  <nav class="navbar bg-base-100">
-    <div class="navbar-start">
-      <a
-        href="/"
-        class:list={[
-          "btn btn-ghost h-14 animate-none font-mono text-2xl normal-case italic transition-colors hover:text-white",
-          `${pathName === "/" ? "text-white" : ""}`,
-        ]}
-      >
-        {"<wdt/>"}
-      </a>
-    </div>
-    <div class="navbar-center hidden lg:block">
-      <ul class="menu menu-horizontal">
-        {
-          links.map((link) => (
-            <li
-              class:list={[
-                "group border-y-2 border-y-transparent bg-none transition-all",
-                link.hoverBorderColor,
-                `${pathName === link.path ? link.borderColor : ""}`,
-              ]}
-            >
-              <a
-                href={link.path}
-                class="!bg-transparent px-6 transition-colors group-hover:text-white"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class="navbar-end">
-      <label for="main-drawer" class="group btn btn-square btn-ghost">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          class="inline-block h-7 w-7 stroke-current transition-colors group-hover:stroke-white"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"></path></svg
-        >
-      </label>
-    </div>
+<header class="h-20 border-b-[1px] border-b-base-200">
+  <nav class="flex h-full w-full flex-row items-center justify-between px-5">
+    <a href="" class="font-mono text-2xl font-bold normal-case italic"
+      >{"<wdt/>"}</a
+    >
+    <label for="main-drawer" class="">
+      <MenuIcon />
+    </label>
   </nav>
 </header>

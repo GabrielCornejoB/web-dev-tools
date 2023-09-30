@@ -1,8 +1,8 @@
 export type Category =
   | "icons"
+  | "fonts"
   | "illustrations"
   | "colors"
-  | "generators"
-  | "other"
   | "libraries"
-  | "fonts";
+  | "generators"
+  | "other";

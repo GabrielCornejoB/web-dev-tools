@@ -3,6 +3,8 @@ import { ViewTransitions } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import Drawer from "../components/Drawer.astro";
 import { links } from "../data/nav-links";
+import Aside from "../components/Aside.astro";
+import NavButtons from "../components/NavButtons.astro";
 
 const { title } = Astro.props;
 ---
@@ -28,13 +30,41 @@ const { title } = Astro.props;
   <body class="text-content w-full">
     <div class="drawer drawer-end">
       <input type="checkbox" id="main-drawer" class="drawer-toggle" />
-      <div class="drawer-content">
+
+      <!-- MAIN APP CONTENT -->
+      <div
+        class="drawer-content flex h-screen w-screen flex-col overflow-hidden"
+      >
         <Navbar links={links} />
-        <main class="w-full">
-          <slot />
-        </main>
+        <div class="app-layout w-full flex-grow justify-start">
+          <Aside />
+          <main class="flex-grow [grid-area:content]">
+            <slot />
+          </main>
+          <NavButtons />
+        </div>
       </div>
+      <!-- END OFF MAIN APP CONTENT -->
+
       <Drawer links={links} />
     </div>
+
+    <style>
+      .app-layout {
+        display: flex;
+        flex-direction: column;
+      }
+      @media (min-width: 768px) {
+        .app-layout {
+          display: grid;
+
+          grid-template-areas:
+            "content aside"
+            "content buttons";
+          grid-template-columns: 1fr 400px;
+          grid-template-rows: 1fr 200px;
+        }
+      }
+    </style>
   </body>
 </html>
