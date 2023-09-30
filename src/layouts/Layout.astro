@@ -38,7 +38,9 @@ const { title } = Astro.props;
         <Navbar links={links} />
         <div class="app-layout w-full flex-grow justify-start">
           <Aside />
-          <main class="flex-grow [grid-area:content]">
+          <main
+            class="content-height flex-grow overflow-y-scroll [grid-area:content]"
+          >
             <slot />
           </main>
           <NavButtons />
@@ -53,6 +55,9 @@ const { title } = Astro.props;
       .app-layout {
         display: flex;
         flex-direction: column;
+      }
+      .content-height {
+        height: calc(100vh - 80px);
       }
       @media (min-width: 1024px) {
         .app-layout {

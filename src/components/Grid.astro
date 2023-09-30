@@ -8,10 +8,10 @@ interface Props {
 const { tools } = Astro.props;
 ---
 
-<div class="mt-8 flex w-full flex-col items-center gap-8">
-  <div
-    class="mb-[25px] flex w-[300px] flex-row flex-wrap justify-center gap-[25px] md:w-[625px] lg:w-[950px] xl:w-[1125px] 2xl:w-[1275px]"
+<div class="flex w-full flex-col items-center gap-8 py-8">
+  <article
+    class="flex w-[300px] flex-row flex-wrap justify-center gap-[25px] md:w-[625px] min-[1350px]:w-[950px] min-[1600px]:w-[1275px]"
   >
     {tools.map((tool) => <Card tool={tool} />)}
-  </div>
+  </article>
 </div>
