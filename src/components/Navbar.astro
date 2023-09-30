@@ -18,8 +18,12 @@ const pathName = new URL(Astro.request.url).pathname;
   <nav
     class="flex h-20 w-full flex-row items-center justify-between border-b-[1px] border-b-base-200 px-5 lg:px-10"
   >
-    <a href="/" class="font-mono text-2xl font-bold normal-case italic"
-      >{"<wdt/>"}</a
+    <a
+      href="/"
+      class:list={[
+        "font-mono text-2xl font-bold normal-case italic",
+        pathName == "/" && "text-white",
+      ]}>{"<wdt/>"}</a
     >
     <label for="main-drawer" class="lg:hidden">
       <MenuIcon />
@@ -36,6 +40,8 @@ const pathName = new URL(Astro.request.url).pathname;
                 category={link.name.toLowerCase() as Category}
                 color="content"
                 size="nav"
+                hoverColor={link.hoverFillColor}
+                activeColor={pathName == link.path ? link.fillColor : undefined}
               />
             </a>
           ))

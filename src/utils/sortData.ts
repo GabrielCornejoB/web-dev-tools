@@ -17,7 +17,7 @@ export function sortTools(data: Tool[]): Tool[] {
 
   const orderedTools: Tool[] = [];
   for (const category in categories) {
-    orderedTools.push(...categories[category].slice(0, 4));
+    orderedTools.push(...categories[category].slice(0, 2));
   }
 
   orderedTools.sort(() => Math.random() - 0.5);

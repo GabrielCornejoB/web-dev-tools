@@ -1,6 +1,7 @@
 export interface Link {
   name: string;
   path: string;
-  borderColor: string;
-  hoverBorderColor: string;
+  fillColor: string;
+  hoverFillColor: string;
+  description?: string;
 }
