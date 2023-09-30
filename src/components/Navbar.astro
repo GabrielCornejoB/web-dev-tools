@@ -1,5 +1,8 @@
 ---
 import type { Link } from "../models/link.model";
+import CategoyIcon from "./icons/CategoyIcon.astro";
+import Github from "./icons/Github.astro";
+import Info from "./icons/Info.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
 
 interface Props {
@@ -11,12 +14,35 @@ const pathName = new URL(Astro.request.url).pathname;
 ---
 
 <header class="h-20 border-b-[1px] border-b-base-200">
-  <nav class="flex h-full w-full flex-row items-center justify-between px-5">
+  <nav
+    class="flex h-full w-full flex-row items-center justify-between px-5 lg:px-10"
+  >
     <a href="" class="font-mono text-2xl font-bold normal-case italic"
       >{"<wdt/>"}</a
     >
-    <label for="main-drawer" class="">
+    <label for="main-drawer" class="lg:hidden">
       <MenuIcon />
     </label>
+
+    <div class="hidden h-full lg:flex lg:flex-row">
+      <div
+        class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 px-10"
+      >
+        <CategoyIcon category="icons" color="content" size="nav" />
+        <CategoyIcon category="fonts" color="content" size="nav" />
+        <CategoyIcon category="illustrations" color="content" size="nav" />
+        <CategoyIcon category="colors" color="content" size="nav" />
+        <CategoyIcon category="libraries" color="content" size="nav" />
+        <CategoyIcon category="generators" color="content" size="nav" />
+        <CategoyIcon category="other" color="content" size="nav" />
+      </div>
+
+      <div
+        class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 pl-10"
+      >
+        <Github />
+        <Info />
+      </div>
+    </div>
   </nav>
 </header>
