@@ -34,7 +34,7 @@ const pathName = new URL(Astro.request.url).pathname;
         class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 px-10"
       >
         {
-          links.map((link) => (
+          links.slice(1).map((link) => (
             <a href={link.path}>
               <CategoyIcon
                 category={link.name.toLowerCase() as Category}
@@ -52,7 +52,7 @@ const pathName = new URL(Astro.request.url).pathname;
         class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 pl-10"
       >
         <a href="/about">
-          <Info />
+          <Info isActive={pathName == "/about"} />
         </a>
         <a href="https://github.com/GabrielCornejoB/web-dev-tools">
           <Github />

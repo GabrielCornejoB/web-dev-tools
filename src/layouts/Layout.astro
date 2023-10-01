@@ -9,13 +9,8 @@ import type { Link } from "../models/link.model";
 
 const { title } = Astro.props;
 const pathName = new URL(Astro.request.url).pathname;
-const activeLink: Link = links.find((link) => link.path == pathName) || {
-  name: "Web Dev Tools",
-  path: "/",
-  description: "",
-  fillColor: "",
-  hoverFillColor: "",
-};
+const activeLink: Link =
+  links.find((link) => link.path == pathName) || links[0];
 ---
 
 <!doctype html>

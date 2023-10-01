@@ -16,7 +16,7 @@ const { links } = Astro.props;
       <ul>
         <li><a href="/">All</a></li>
         {
-          links.map((link) => (
+          links.slice(1).map((link) => (
             <li>
               <a href={link.path}>{link.name}</a>
             </li>
