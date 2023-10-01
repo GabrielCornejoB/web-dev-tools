@@ -60,10 +60,10 @@ const activeLink: Link =
         display: flex;
         flex-direction: column;
       }
-      .content-height {
+      /* .content-height {
         height: calc(100vh - 80px);
-      }
-      @media (min-width: 1024px) {
+      } */
+      @media (min-width: 1075px) {
         .app-layout {
           display: grid;
 
@@ -72,6 +72,9 @@ const activeLink: Link =
             "content buttons";
           grid-template-columns: 1fr 400px;
           grid-template-rows: 1fr 200px;
+        }
+        .content-height {
+          height: calc(100vh - 80px);
         }
       }
     </style>

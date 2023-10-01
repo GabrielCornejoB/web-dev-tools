@@ -16,7 +16,7 @@ const pathName = new URL(Astro.request.url).pathname;
 
 <header>
   <nav
-    class="flex h-20 w-full flex-row items-center justify-between border-b-[1px] border-b-base-200 px-5 lg:px-10"
+    class="flex h-20 w-full flex-row items-center justify-between border-b-[1px] border-b-base-200 px-5 min-[1075px]:px-10"
   >
     <a
       href="/"
@@ -25,11 +25,11 @@ const pathName = new URL(Astro.request.url).pathname;
         pathName == "/" && "text-white",
       ]}>{"<wdt/>"}</a
     >
-    <label for="main-drawer" class="lg:hidden">
+    <label for="main-drawer" class="min-[1075px]:hidden">
       <MenuIcon />
     </label>
 
-    <div class="hidden h-full lg:flex lg:flex-row">
+    <div class="hidden h-full min-[1075px]:flex min-[1075px]:flex-row">
       <div
         class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 px-10"
       >

@@ -10,7 +10,7 @@ const { activeLink } = Astro.props;
 ---
 
 <nav
-  class="absolute bottom-0 flex h-[100px] w-screen flex-row border-l-[1px] border-t-[1px] border-base-200 bg-base-100 [grid-area:buttons] lg:static lg:h-[200px] lg:w-full"
+  class="absolute bottom-0 flex h-[100px] w-screen flex-row border-l-[1px] border-t-[1px] border-base-200 bg-base-100 [grid-area:buttons] min-[1075px]:static min-[1075px]:h-[200px] min-[1075px]:w-full"
 >
   <a href={activeLink.previousPath} class="grid w-1/2 place-items-center">
     <Arrow direction="left" />
