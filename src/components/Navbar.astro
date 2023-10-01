@@ -21,7 +21,7 @@ const pathName = new URL(Astro.request.url).pathname;
     <a
       href="/"
       class:list={[
-        "font-mono text-2xl font-bold normal-case italic",
+        "font-mono text-2xl font-bold normal-case italic hover:text-white",
         pathName == "/" && "text-white",
       ]}>{"<wdt/>"}</a
     >

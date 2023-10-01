@@ -3,5 +3,42 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About">
-  <h1>About page</h1>
+  <article class="flex w-full flex-col gap-4 p-5">
+    <h2 class="text-2xl font-bold">Note from the author</h2>
+    <p>
+      Hey there! I've always faced the challenge of searching far and wide for
+      web app resources, only to forget their names later. Web Dev Tools is a
+      simple app that compiles some incredibly useful and user-friendly tools
+      I've come across. I've personally tested the majority of the applications
+      listed here, and for the ones I haven't, I've thoroughly researched them
+      and found them to be quite impressive.<br /><br />
+       Just to clarify, I'm not the owner of any of the resources featured on
+      this page, and I'm not profiting from this application—it's purely for fun
+      and convenience. Furthermore, all the resources are provided for free,
+      with most of them not requiring any login. However, please note that a few
+      may require attribution if used for commercial purposes. Therefore, it's
+      always a good practice to double-check the licensing requirements before
+      using any resource.<br /><br />
+       I sincerely hope you find our site valuable and that it aids you, even if
+      just a little, on your web development journey!
+    </p>
+    <div class="divider"></div>
+    <h2 class="text-2xl font-bold">Credits</h2>
+    <p>
+      Previously I said to you that you should double check if any resource
+      needs any sort of attibution, some of these tools doesn't even need but I
+      wanted to list them here:
+    </p>
+    <ul>
+      <li>- FontAwesome - For all of the icons used in this application</li>
+      <li>
+        - DaisyUI - Didn't used it much for the final product but really useful
+        in the first designs
+      </li>
+      <li>
+        - Dylan Brouwer - This page design is heavily inspired in his portfolio
+      </li>
+      <li>- ChatGPT - Wrote most of the descriptions haha</li>
+    </ul>
+  </article>
 </Layout>
