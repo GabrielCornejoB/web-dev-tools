@@ -22,7 +22,8 @@ const { category } = Astro.params;
 
 const currentCategory = links.find((link) => link.path.slice(1) === category);
 
-const { description, name } = currentCategory || links[0];
+const { description, name, nextPath, previousPath } =
+  currentCategory || links[0];
 
 const tools: Tool[] = [];
 
@@ -42,6 +43,8 @@ qs.forEach((doc) => {
     : "Other Web Dev Tools"}
   description={description}
   name={name}
+  previous={previousPath}
+  next={nextPath}
 >
   <Grid tools={tools} />
 </Layout>

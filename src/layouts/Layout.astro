@@ -1,17 +1,12 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { links } from "../data/nav-links";
-import type { Link } from "../models/link.model";
 import Navbar from "../components/Navbar.astro";
 import Drawer from "../components/Drawer.astro";
 import Aside from "../components/Aside.astro";
 import NavButtons from "../components/NavButtons.astro";
 
-const { title, description, name } = Astro.props;
-
-const pathName = new URL(Astro.request.url).pathname;
-const activeLink: Link =
-  links.find((link) => link.path == pathName) || links[0];
+const { title, description, name, previous, next } = Astro.props;
 ---
 
 <!doctype html>
@@ -52,7 +47,7 @@ const activeLink: Link =
           >
             <slot />
           </main>
-          <NavButtons activeLink={activeLink} />
+          <NavButtons previous={previous} next={next} />
         </div>
       </div>
       <!-- END OFF MAIN APP CONTENT -->

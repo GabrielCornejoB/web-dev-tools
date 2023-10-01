@@ -1,22 +1,22 @@
 ---
-import type { Link } from "../models/link.model";
 import Arrow from "./icons/Arrow.astro";
 
 interface Props {
-  activeLink: Link;
+  previous: string;
+  next: string;
 }
 
-const { activeLink } = Astro.props;
+const { previous, next } = Astro.props;
 ---
 
 <nav
   class="absolute bottom-0 flex h-[100px] w-screen flex-row border-l-[1px] border-t-[1px] border-base-200 bg-base-100 [grid-area:buttons] min-[1075px]:static min-[1075px]:h-[200px] min-[1075px]:w-full"
 >
-  <a href={activeLink.previousPath} class="grid w-1/2 place-items-center">
+  <a href={previous} class="grid w-1/2 place-items-center">
     <Arrow direction="left" />
   </a>
   <a
-    href={activeLink.nextPath}
+    href={next}
     class="grid w-1/2 place-items-center border-l-[1px] border-base-200"
   >
     <Arrow direction="right" />

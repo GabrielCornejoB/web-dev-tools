@@ -6,7 +6,7 @@ export const links: Link[] = [
     path: "/",
     fillColor: "",
     hoverFillColor: "",
-    previousPath: "/other",
+    previousPath: "/about",
     nextPath: "/icons",
   },
   {
@@ -77,6 +77,6 @@ export const links: Link[] = [
     description:
       "Welcome to the 'Other Tools' zone - your hub for a variety of indispensable web development utilities. Explore this collection of versatile resources that cater to a wide range of needs, making your web development process smoother and more efficient. Discover the hidden gems that can elevate your projects to the next level!",
     previousPath: "/generators",
-    nextPath: "/",
+    nextPath: "/about",
   },
 ];
