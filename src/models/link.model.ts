@@ -4,4 +4,6 @@ export interface Link {
   fillColor: string;
   hoverFillColor: string;
   description?: string;
+  previousPath: string;
+  nextPath: string;
 }

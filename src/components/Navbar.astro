@@ -1,7 +1,7 @@
 ---
 import type { Category } from "../models/category.model";
 import type { Link } from "../models/link.model";
-import CategoyIcon from "./icons/CategoyIcon.astro";
+import CategoryIcon from "./icons/CategoryIcon.astro";
 import Github from "./icons/Github.astro";
 import Info from "./icons/Info.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
@@ -36,7 +36,7 @@ const pathName = new URL(Astro.request.url).pathname;
         {
           links.slice(1).map((link) => (
             <a href={link.path}>
-              <CategoyIcon
+              <CategoryIcon
                 category={link.name.toLowerCase() as Category}
                 color="content"
                 size="nav"
