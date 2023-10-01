@@ -27,6 +27,8 @@ Web Dev tools is a collection of handpicked, free & easy to use resources that c
 
 I've always faced the challenge of searching far and wide for web app resources, only to forget their names later. Web Dev Tools is a simple app that compiles some incredibly useful and user-friendly tools I've come across. I've personally tested the majority of the applications listed here, and for the ones I haven't, I've thoroughly researched them and found them to be quite impressive.
 
+A few months ago I created [Web Dev Stuff](https://github.com/GabrielCornejoB/web-dev-stuff), it has the same purpose of Web Dev Tools but I was just learning Web dev so this is an improved & better version.
+
 ## **Features**
 
 ### Firebase
