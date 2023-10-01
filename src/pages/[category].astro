@@ -4,6 +4,8 @@ import { collection, query, getDocs, where } from "firebase/firestore";
 import { firestore } from "../utils/firebase.config";
 import type { Tool } from "../models/tool.model";
 import Grid from "../components/Grid.astro";
+import { links } from "../data/nav-links";
+import type { Link } from "../models/link.model";
 
 export function getStaticPaths() {
   return [
@@ -17,6 +19,9 @@ export function getStaticPaths() {
   ];
 }
 const { category } = Astro.params;
+const pathName = new URL(Astro.request.url).pathname;
+const activeLink: Link =
+  links.find((link) => link.path == pathName) || links[0];
 
 const tools: Tool[] = [];
 
@@ -34,6 +39,7 @@ qs.forEach((doc) => {
   title={category !== "other"
     ? `Web Dev ${category?.charAt(0).toUpperCase()}${category?.slice(1)}`
     : "Other Web Dev Tools"}
+  description={activeLink.description}
 >
   <Grid tools={tools} />
 </Layout>
