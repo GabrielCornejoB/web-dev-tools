@@ -1,17 +1,17 @@
 ---
-import type { Link } from "../models/link.model";
 interface Props {
-  link: Link;
+  description: string;
+  name: string;
 }
 
-const { link } = Astro.props;
+const { description, name } = Astro.props;
 ---
 
 <aside class="flex flex-col [grid-area:aside]">
   <div
     class="grid h-20 place-items-center border-b-[1px] border-l-[1px] border-base-200"
   >
-    <h1 class="text-4xl font-bold italic text-white">{link.name}</h1>
+    <h1 class="text-4xl font-bold italic text-white">{name}</h1>
   </div>
   <div
     tabindex="0"
@@ -24,9 +24,9 @@ const { link } = Astro.props;
     </div>
     <div class="collapse-content flex flex-col justify-end px-5">
       {
-        link.description ? (
+        description ? (
           <p class="hyphens-auto text-lg font-normal min-[1075px]:px-3 min-[1075px]:pb-3">
-            {link.description}
+            {description}
           </p>
         ) : (
           <p class="hyphens-auto text-lg font-normal min-[1075px]:px-3 min-[1075px]:pb-3">

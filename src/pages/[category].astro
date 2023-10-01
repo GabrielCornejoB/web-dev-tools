@@ -19,9 +19,10 @@ export function getStaticPaths() {
   ];
 }
 const { category } = Astro.params;
-const pathName = new URL(Astro.request.url).pathname;
-const activeLink: Link =
-  links.find((link) => link.path == pathName) || links[0];
+
+const currentCategory = links.find((link) => link.path.slice(1) === category);
+
+const { description, name } = currentCategory || links[0];
 
 const tools: Tool[] = [];
 
@@ -39,7 +40,8 @@ qs.forEach((doc) => {
   title={category !== "other"
     ? `Web Dev ${category?.charAt(0).toUpperCase()}${category?.slice(1)}`
     : "Other Web Dev Tools"}
-  description={activeLink.description}
+  description={description}
+  name={name}
 >
   <Grid tools={tools} />
 </Layout>

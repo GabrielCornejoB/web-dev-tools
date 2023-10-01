@@ -1,4 +1,5 @@
 ---
+import { links } from "../data/nav-links";
 import type { Category } from "../models/category.model";
 import type { Link } from "../models/link.model";
 import CategoryIcon from "./icons/CategoryIcon.astro";
@@ -7,11 +8,10 @@ import Info from "./icons/Info.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
 
 interface Props {
-  links: Link[];
+  name: string;
 }
 
-const { links } = Astro.props;
-const pathName = new URL(Astro.request.url).pathname;
+const { name } = Astro.props;
 ---
 
 <header>
@@ -22,7 +22,7 @@ const pathName = new URL(Astro.request.url).pathname;
       href="/"
       class:list={[
         "font-mono text-2xl font-bold normal-case italic hover:text-white",
-        pathName == "/" && "text-white",
+        name == "Web Dev Tools" && "text-white",
       ]}>{"<wdt/>"}</a
     >
     <label for="main-drawer" class="min-[1075px]:hidden">
@@ -41,7 +41,7 @@ const pathName = new URL(Astro.request.url).pathname;
                 color="content"
                 size="nav"
                 hoverColor={link.hoverFillColor}
-                activeColor={pathName == link.path ? link.fillColor : undefined}
+                activeColor={name == link.name ? link.fillColor : undefined}
               />
             </a>
           ))
@@ -52,7 +52,7 @@ const pathName = new URL(Astro.request.url).pathname;
         class="flex flex-row items-center gap-10 border-l-[1px] border-base-200 pl-10"
       >
         <a href="/about">
-          <Info isActive={pathName == "/about"} />
+          <Info isActive={name == "About"} />
         </a>
         <a href="https://github.com/GabrielCornejoB/web-dev-tools">
           <Github />

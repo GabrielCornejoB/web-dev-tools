@@ -7,7 +7,8 @@ import Drawer from "../components/Drawer.astro";
 import Aside from "../components/Aside.astro";
 import NavButtons from "../components/NavButtons.astro";
 
-const { title, description } = Astro.props;
+const { title, description, name } = Astro.props;
+
 const pathName = new URL(Astro.request.url).pathname;
 const activeLink: Link =
   links.find((link) => link.path == pathName) || links[0];
@@ -40,9 +41,12 @@ const activeLink: Link =
       <div
         class="drawer-content flex h-screen w-screen flex-col overflow-hidden"
       >
-        <Navbar links={links} />
+        <Navbar name={name} />
         <div class="app-layout w-full flex-grow justify-start">
-          <Aside link={activeLink} />
+          <Aside
+            description={name == "Web Dev Tools" ? undefined : description}
+            name={name}
+          />
           <main
             class="content-height flex-grow overflow-y-scroll [grid-area:content]"
           >
