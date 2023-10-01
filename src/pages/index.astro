@@ -1,18 +1,18 @@
 ---
 import { collection, getDocs } from "firebase/firestore";
 import { firestore } from "../utils/firebase.config";
+
 import { sortTools } from "../utils/sortData";
 import type { Tool } from "../models/tool.model";
+
 import Layout from "../layouts/Layout.astro";
 import Grid from "../components/Grid.astro";
 
 const data: Tool[] = [];
-
 const qs = await getDocs(collection(firestore, "tools"));
 qs.forEach((doc) => {
   data.push(doc.data() as Tool);
 });
-
 const tools = sortTools(data);
 ---
 

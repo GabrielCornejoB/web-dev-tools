@@ -1,10 +1,19 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import { links } from "../data/nav-links";
+
 import Navbar from "../components/Navbar.astro";
 import Drawer from "../components/Drawer.astro";
 import Aside from "../components/Aside.astro";
 import NavButtons from "../components/NavButtons.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  name: string;
+  previous: string;
+  next: string;
+}
 
 const { title, description, name, previous, next } = Astro.props;
 ---
@@ -39,7 +48,9 @@ const { title, description, name, previous, next } = Astro.props;
         <Navbar name={name} />
         <div class="app-layout w-full flex-grow justify-start">
           <Aside
-            description={name == "Web Dev Tools" ? undefined : description}
+            description={name == "Web Dev Tools" || name == "About"
+              ? undefined
+              : description}
             name={name}
           />
           <main
@@ -52,7 +63,7 @@ const { title, description, name, previous, next } = Astro.props;
       </div>
       <!-- END OFF MAIN APP CONTENT -->
 
-      <Drawer links={links} />
+      <Drawer />
     </div>
 
     <style>

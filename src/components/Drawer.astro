@@ -1,11 +1,5 @@
 ---
-import type { Link } from "../models/link.model";
-
-interface Props {
-  links: Link[];
-}
-
-const { links } = Astro.props;
+import { links } from "../data/nav-links";
 ---
 
 <div class="drawer-side">
